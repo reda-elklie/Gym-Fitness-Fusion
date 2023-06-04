@@ -1,0 +1,821 @@
+* {
+    font-family: 'Kanit', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    user-select: none;
+    /* outline: 1px solid white; */
+}
+
+ :root {
+    --main-color: red;
+    --transition: 500ms;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*start header*/
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: black;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+header .nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+    text-transform: capitalize;
+    color: white;
+    transition: 500ms;
+}
+
+header .nav ul li a {
+    transition: 500ms;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+header .nav ul:nth-child(1) {
+    color: var(--main-color);
+}
+
+header .nav ul li a:hover {
+    color: var(--main-color);
+}
+
+header .join_button button:first-child {
+    width: 90px;
+    height: 35px;
+    background-color: var(--main-color);
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .join_button button:hover {
+    background-color: transparent;
+    color: var(--main-color);
+    border: var(--main-color) 1px solid;
+    transform: scale(1.09);
+}
+
+header .join_button {
+    background-color: transparent;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+header .join_button button:nth-child(2) {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    outline: 0;
+    font-size: 30px;
+    display: none;
+}
+
+#menu {
+    color: var(--main-color);
+    font-size: 50px;
+    display: flex;
+    display: none;
+}
+
+
+/*end header*/
+
+
+/*start media query*/
+
+
+/*styles for mobile*/
+
+@media screen and (max-width: 767px) {
+    header {
+        max-width: 100%;
+        color: aliceblue;
+        position: static;
+        backdrop-filter: none;
+    }
+    #menu {
+        display: block;
+    }
+    .nav {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(20px);
+        position: fixed;
+        transition: all .5s ease;
+        z-index: 20;
+        gap: 0px;
+    }
+    .nav ul {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0px;
+        padding: 20px;
+    }
+    .nav ul li {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    header .join_button button:nth-child(1) {
+        display: none;
+    }
+    header .nav.open {
+        top: 10%;
+    }
+    .bx-menu {
+        display: block;
+    }
+    #menu {
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        transition: var(--transition);
+        cursor: pointer;
+        color: white;
+    }
+    .about img {
+        display: none;
+    }
+    .about .about-text p {
+        font-size: 20px;
+        padding: 1rem;
+    }
+    .program .program-text h1 {
+        font-size: 20px;
+        padding: 1rem 2rem;
+    }
+    .program {
+        max-width: 100%;
+    }
+    .program-plan {
+        width: 90%;
+    }
+    .comments .comment {
+        width: 90%;
+        margin: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+    .about .about-text p {
+        font-size: 1rem;
+        padding: 0.9rem;
+        word-spacing: .02rem;
+        letter-spacing: 0.020rem;
+    }
+    .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .comments .comment {
+        width: 90%;
+        margin: 2rem;
+    }
+}
+
+
+/*End media query*/
+
+
+/*start home*/
+
+.home {
+    height: 94vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: -50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-attachment: fixed; */
+    color: white;
+}
+
+.home .title-home {
+    width: 90%;
+    color: white;
+    padding: 0 20px;
+    margin-left: 20px;
+}
+
+.home .title-home h3 span {
+    color: var(--main-color);
+}
+
+.home .title-home h3 {
+    font-size: 3.5vw;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.home .title-home button {
+    background-color: var(--main-color);
+    width: 170px;
+    height: 40px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 0px solid var(--main-color);
+}
+
+.home .title-home button:hover {
+    background-color: var(--main-color);
+    backdrop-filter: blur(2px);
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+    color: white;
+}
+
+
+/*end home*/
+
+
+/*start about*/
+
+.about {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about img {
+    width: 700px;
+    height: 500px;
+}
+
+.about-text {
+    width: 649px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+.about-text h1 {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6rem;
+    padding-bottom: 10px;
+}
+
+.about-text p:last-child {
+    padding-bottom: 0px;
+}
+
+.about-text button {
+    padding: 1rem 5rem;
+    background-color: var(--main-color);
+    color: wheat;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.about-text button a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.about-text button:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+
+/*end about */
+
+
+/*start program*/
+
+.program {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.program-text h1 {
+    color: white;
+    font-size: 3rem;
+    padding: 50px;
+}
+
+.program-plan {
+    display: flex;
+    transition: 450ms;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.prog {
+    position: relative;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.prog:hover .up-div {
+    opacity: 1;
+    transition: 500ms;
+}
+
+.prog img {
+    width: 250px;
+    height: 200px;
+}
+
+.up-div {
+    width: 100%;
+    height: 200px;
+    transition: 400ms all;
+    position: absolute;
+    background-color: rgba(6, 6, 6, 0.593);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+}
+
+
+/*End program*/
+
+
+/*start train */
+
+.trainers {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.train-text h1 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.train {
+    width: 300px;
+    height: 300px;
+    background-color: var(--main-color);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 5rem;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.train:hover .down-train {
+    opacity: 1;
+}
+
+.train img {
+    width: 400px;
+    height: inherit;
+}
+
+.down-train {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    background-color: rgba(44, 43, 43, 0.266);
+    z-index: 1;
+    color: white;
+    font-size: 1.8em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(53, 53, 116, 0.343);
+    opacity: 0;
+    transition: .5s;
+}
+
+
+/*end  train */
+
+
+/*start pakage*/
+
+.pakage {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pakage-text h1 {
+    font-size: 1.6rem;
+    padding: 20px;
+    color: var(--main-color);
+}
+
+.pake {
+    width: 300px;
+    background-color: black;
+    border: 1px solid rgba(255, 0, 0, 0.195);
+    text-align: start;
+    padding: 0 0 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: .5s;
+}
+
+.pake:hover {
+    border: 1px solid var(--main-color);
+}
+
+.pake h1 {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.pake h4::before {
+    content: '〉  ';
+    font-size: 1.3rem;
+    color: rgb(60, 53, 53);
+}
+
+.pake h4 {
+    font-size: 1rem;
+    color: rgb(60, 53, 53);
+}
+
+.pake h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding: 20px;
+}
+
+.pake button {
+    padding: 1rem 6rem;
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: .5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pake button:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+.pakes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+/*End pakage*/
+
+
+/*start comments*/
+
+.comments {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.comments-text h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 3rem 0 5rem 0;
+    color: var(--main-color);
+}
+
+.comment {
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.927);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 02rem 2rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 0, 0, 0.216);
+    transition: .5s;
+}
+
+.comment img {
+    width: 90px;
+    height: 90px;
+    aspect-ratio: 1/1;
+    margin-top: -40px;
+    border-radius: 50%;
+}
+
+.comment p {
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.comment h2,
+h3 {
+    color: wheat;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.comment button {
+    padding: 0.5rem 3rem;
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: .5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment button:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+.coms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.comment:hover {
+    border: 1px solid var(--main-color);
+}
+
+
+/*end comments*/
+
+
+/*start calories */
+
+.calculteCalories {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    color: white;
+}
+
+.calc-text h1 {
+    font-size: 1.6rem;
+    padding: 30px 10px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+#calorie-form {
+    padding: 0 1rem;
+}
+
+.line {
+    padding: 0px 0 1.5rem 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    border: 01px solid rgba(255, 0, 0, 0.237);
+    outline: 0;
+    background-color: black;
+    appearance: none;
+    color: white;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 01px solid var(--main-color);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+
+/* Styling for select inputs */
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 01px solid rgba(255, 0, 0, 0.237);
+    outline: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:after {
+    content: '\25BE';
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    pointer-events: none;
+}
+
+select option {
+    padding: 8px;
+}
+
+select option:checked {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+fieldset legend {
+    color: wheat;
+}
+
+input::placeholder {
+    font-size: 17px;
+}
+
+.line button {
+    margin: auto;
+    padding: 1rem 6rem;
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: .5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line button:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+form {
+    transition: .4s;
+}
+
+form:hover {
+    background-color: rgba(91, 71, 71, 0.241);
+}
+
+.span {
+    width: 100px;
+    text-decoration: underline;
+    padding: 0 20px;
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+
+/*end calories */
+
+footer h4 {
+    background-color: black;
+    padding: 2rem;
+    text-align: center;
+    color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #7729299f;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
