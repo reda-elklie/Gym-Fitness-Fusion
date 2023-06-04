@@ -4,6 +4,10 @@ menu.onclick = () => {
     menu.classList.toggle('bx-x');
     navbar.classList.toggle('open');
 }
+navbar.addEventListener("click", function() {
+    navbar.classList.remove("open");
+    menu.classList.toggle('bx-x');
+});
 document.getElementById('calorie-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
