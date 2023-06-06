@@ -26,7 +26,8 @@ document.getElementById('calorie-form').addEventListener('submit', function(even
 
     let bmr;
     if (gender === 'male') {
-        bmr = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+//         bmr = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+         bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
     } else if (gender === 'female') {
         bmr = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
     } else {
